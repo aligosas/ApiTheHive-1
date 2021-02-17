@@ -20,6 +20,7 @@ response = apiH.find_alerts(sort=['-createdAt'], range='all')
 alerts = response.json()
 
 if response.status_code == 200:
+    alerts = Filter(alerts)
 
     try:
 
@@ -34,10 +35,15 @@ if response.status_code == 200:
                 for analyzer in analyzers:
                     analyzer_id = analyzer.analyzerDefinitionId
                     response = apiH.run_analyzer(cortex_id, artifact_id, analyzer_id)
-
+                    response_json = response.json()
+		    
                     if response.status_code == 200:
                         msg = "Se corrió correctamente el análisis " + analyzer_id  + " del observable " + artifact['data'] + " del caso " + case_id 
                         Logging("[INFO]",msg)
+
+                    else:
+                        msg = "Ocurrió un error al intetar correr el análisis " + analyzer_id  + " del observable " + artifact['data'] + " del caso " + case_id
+                        Logging("[ERROR]",msg)
 
     except CaseException as e:
         msg = "Ocurrió fallo al intentar crear caso para la alerta con id: " + alert['id']

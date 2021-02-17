@@ -1,6 +1,23 @@
 #Api Connections
 from ApiConnections import *
 
+def Filter(alerts):
+
+    filtered_alerts = []
+    artifacts = []
+
+    for alert in alerts:
+
+        for artifact in alert['artifacts']:
+            if not artifact['data'] in artifacts:
+                artifacts.append(artifact['data'])
+                filtered_alerts.append(alert)
+
+    msg = "Se realizó el filtrado. De " +  str(len(alerts)) + " alertas se crearon solo " + str(len(filtered_alerts)) + " casos"
+    Logging("[INFO]",msg)
+
+    return filtered_alerts
+
 def CreateCase(alert):
     
     tasks = [
