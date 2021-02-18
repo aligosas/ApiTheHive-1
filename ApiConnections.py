@@ -1,4 +1,6 @@
+import datetime
 import time
+import pytz
 
 # Config File
 import ApiConfig as cfg
@@ -6,6 +8,7 @@ import ApiConfig as cfg
 # TheHive4Py Imports
 from thehive4py.api import TheHiveApi
 from thehive4py.models import *
+from thehive4py.query import *
 
 #Cortex Imports
 from cortex4py.api import Api
