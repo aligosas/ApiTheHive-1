@@ -13,7 +13,7 @@ def Filter(alerts):
                 artifacts.append(artifact['data'])
                 filtered_alerts.append(alert)
 
-    msg = "Se realizó el filtrado. De " +  str(len(alerts)) + " alertas se crearon solo " + str(len(filtered_alerts)) + " casos"
+    msg = "Se realizó el filtrado. De " +  str(len(alerts)) + " alertas se crearon " + str(len(filtered_alerts)) + " casos, los demás observables se encuentran repetidos"
     Logging("[INFO]",msg)
 
     return filtered_alerts
@@ -106,3 +106,19 @@ def Logging(title, message):
     LogFile.write(Log + "\n")
     LogFile.close()
 
+def GetReport(job_id):
+
+    job = apiC.jobs.get_by_id(job_id)
+    
+    if job.json()['status'] == "Success":
+        
+        report = apiC.jobs.get_report(job.id).report
+        msg = "Se corrió el análisis correctamente, status: " + job.json()['status'] + ", obteniendo reporte para el análisis"
+        Logging("[INFO]",msg)
+        return report
+
+    else:
+     
+        msg = "El análisis que se intentaba correr falló, se recomienda validar que la configuración de Cortex se encuentre bien"
+        Logging("[ERROR]",msg)
+        return None
