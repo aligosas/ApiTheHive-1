@@ -4,7 +4,7 @@ Para el reenvío de alertas del XOC a la plataforma de ThreatIntelligence utiliz
 Para crear una regla que consuma la Api de TheHive se requiere configurar los siguientes parametros:
 
 <p align="center" width="100%">
-    | Parametros | Descripción |
+| Parametros | Descripción |
 | ------------- | ------------- |
 | Contenido de la celda  | Contenido de la celda  |
 | Contenido de la celda  | Contenido de la celda  | 
