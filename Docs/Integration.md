@@ -23,7 +23,7 @@ Para realizar una integración exitosa, es necesario entender el significado de 
 
 | Parametro | Descripción |
 | ------------- | ------------- |
-| CORTEX-ID  | Nombre de identificación del servidor de cortex, esto es importante dado que es un parametro que se debe pasar para correr análisis.  |
+| CORTEX-ID  | Nombre de identificación del servidor de cortex, esto es importante dado que es un parametro que se debe pasar para correr análisis  |
 | url  | URL del servidor de cortex  | 
 | key  | ApiKey de Cortex  |
 
