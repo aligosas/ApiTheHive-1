@@ -8,7 +8,7 @@ Para la contrucción de la plataforma de inteligencia de amenazas se hizo uso de
 
 Cada tecnología utilizada en el desarrollo de este proyecto cumple una función especifica para garantizar el correcto funcionamiento del proyecto, TheHive es una plataforma diseñada para facilitar la vida de los SOC, CSIRT, CERT y cualquier profesional de seguridad de la información que se ocupe de incidentes de seguridad que deban ser investigados y tomados medidas. rápidamente. 
 
-Cortex es una herramienta que  permite analizar los observables que se han recopilado, a escala, consultando una sola herramienta en lugar de varias, los objetos observables, como direcciones IP y de correo electrónico, URL, nombres de dominio, archivos o hashes, se pueden analizar uno por uno o en modo masivo mediante una interfaz web.
+Cortex es una herramienta que  permite analizar observables que se han recopilado, a escala, consultando una sola herramienta en lugar de varias, los objetos observables, como direcciones IP y de correo electrónico, URL, nombres de dominio, archivos o hashes, se pueden analizar uno por uno o en modo masivo mediante una interfaz web.
 
 ```
 git status
