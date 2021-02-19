@@ -19,9 +19,13 @@ Para crear una regla ElastAlert se debe ingresar al Dashboard de Kibana y en el 
 
 ![ElastAlert](https://user-images.githubusercontent.com/79227109/108474622-9e66e300-725d-11eb-88d7-7aad32227ce8.PNG)
 
+El parametro **hive_apikey** se obtiene ingresando al portal de TheHive, especificamente en  `Admin/Users`, en esta ventana se observan los usuarios de la plataforma y los permisos que estos tienen, una vez se tenga claro cual es el usuario que nos interesa damos clic en **Reveal**, e inmediatamente se revelará el ApiKey, se debe observar algo similar a esto:
+
+![ApiKey](https://user-images.githubusercontent.com/79227109/108475779-2a2d3f00-725f-11eb-8723-4efb13336d75.PNG)
+
 ### Ejemplo de creación de regla ElastAlert:
-
-
+La siguiente regla consiste en el reenvío de los eventos que del indice **fortiweb-*** con attack_type: SQL Injection
+ 
 ```
 es_host: elasticsearch
 es_port: 9200
