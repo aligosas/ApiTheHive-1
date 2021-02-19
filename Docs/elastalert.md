@@ -16,6 +16,9 @@ Para crear una regla ElastAlert que consuma la Api de TheHive se requiere config
 | hive_observable_data_mapping  | Asignación de los observables, es decir la información que requiere ser analizada  | 
 
 
+### Ejemplo de creación de regla ElastAlert:
+
+
 ```
 es_host: elasticsearch
 es_port: 9200
