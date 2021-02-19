@@ -1,12 +1,12 @@
 # Creación de reglas ElastAlert
-Para el reenvío de alertas del XOC a la plataforma de ThreatIntelligence utilizamos la herramienta **ElastAlert Kibana Plugin**, con la configuración de las reglas podemos obtener eventos por indice especifico que se encuentran almacenados en **ElasticSearch**, en este caso, se consumirá la Api de TheHive.
+Para el reenvío de alertas del XOC a nuestra plataforma se utiliza la herramienta **ElastAlert Kibana Plugin** que es capaz de consumir la Api de TheHive, este plugin nos perimite la creación de reglas para obtener eventos por indice especifico que se encuentran almacenados en **ElasticSearch**.
 
 Para crear una regla que consuma la Api de TheHive se requiere configurar los siguientes parametros:
 
 | Parametro | Descripción |
 | ------------- | ------------- |
-| es_host  | Contenido de la celda  |
-| es_port  | Contenido de la celda  | 
+| es_host  | Hostname del servidor en el que se encuentra el servicio elasticsearch  |
+| es_port  | Puerto por el cual se consume el servicio elasticsearch  | 
 | name  | Contenido de la celda  |
 | type  | Contenido de la celda  | 
 | index  | Contenido de la celda  |
