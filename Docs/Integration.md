@@ -8,9 +8,9 @@ Uniendo las herramientas TheHive y Cortex podemos tener una plataforma de gesti√
 
 ```
 cortex {
-  "CORTEX-ALIGO" {
-  url = "http://127.0.0.1:9001"
-  key = "59kn3AMItpJEouvqKgP8PkzpQfSAmUBn"
+  "<CORTEX-ID>" {
+  url = "<cortex-url>:<cortex-port>"
+  key = "<cortex-apikey>"
   }
 }
 ```
