@@ -1,1 +1,1 @@
-# Integración TheHive / Cortex / MISP
+# Integración TheHive/Cortex
