@@ -28,6 +28,7 @@ Junto con MISP, Cortex es el compañero perfecto para TheHive . TheHive le permi
 
 TheHive y Cortex cuentan con un cliente API cada uno, ambos son consumidos a través de modulos de python, esto permite la creación de un script que ayude a la automatización te estas tareas que deben ser ejecutadas por el FronEnd, lo cuál hace que el proceso de gestión de incidentes sea aún más eficientes.
 
+El 
 
 ## Guías
 - [Documentación de TheHive](https://github.com/TheHive-Project/TheHiveDocs)
