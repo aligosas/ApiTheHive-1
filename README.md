@@ -10,6 +10,8 @@ Cada tecnología utilizada en el desarrollo de este proyecto cumple una función
 
 Cortex es una herramienta que  permite analizar observables que se han recopilado, a escala, consultando una sola herramienta en lugar de varias, los objetos observables, como direcciones IP y de correo electrónico, URL, nombres de dominio, archivos o hashes, se pueden analizar uno por uno o en modo masivo mediante una interfaz web.
 
+MISP es una plataforma de inteligencia contra amenazas especialmente utilizada para la compartición, almacenaje y correlación de Indicadores de compromiso, persiguiendo tener una comunidad colaborativa sobre amenazas existentes, cuyo objetivo es ayudar a mejorar las contramedidas utilizadas contra los ataques dirigidos y establecer acciones preventivas y de detección.
+
 ```
 git status
 ```
