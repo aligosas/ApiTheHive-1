@@ -6,6 +6,8 @@ Junto con MISP, Cortex es el compañero perfecto para TheHive. TheHive le permit
 ## Integración de TheHive y Cortex
 Uniendo las herramientas TheHive y Cortex podemos tener una plataforma de gestión de incidentes de seguridad que pueda ejecutar análisis y obtener los reportes de estos de una forma sencilla consumiendo los analizadores que nos provee Cortex, además de esto podemos crear respuestas a los resultados de los análisis, esto se logra con los responders que también nos provee este software.
 
+Para realizar la integración de estas dos herramientas solo es necesario agregar la siguiente configuración al archivo de configuración de TheHive, generalmente este archivo se encuentra en `/etc/thehive/applications.conf`
+
 ```
 cortex {
   "<CORTEX-ID>" {
