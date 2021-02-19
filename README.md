@@ -8,11 +8,17 @@ Para la contrucción de la plataforma de inteligencia de amenazas se hizo uso de
 
 Cada tecnología utilizada en el desarrollo de este proyecto cumple una función especifica para garantizar el correcto funcionamiento del proyecto, TheHive es una plataforma diseñada para facilitar la vida de los SOC, CSIRT, CERT y cualquier profesional de seguridad de la información que se ocupe de incidentes de seguridad que deban ser investigados y tomados medidas. rápidamente. 
 
+![TheHive](https://user-images.githubusercontent.com/79227109/108465251-aae43f00-724f-11eb-8164-927e7af56013.PNG)
+
 Cortex es una herramienta que  permite analizar observables que se han recopilado, a escala, consultando una sola herramienta en lugar de varias, los objetos observables, como direcciones IP y de correo electrónico, URL, nombres de dominio, archivos o hashes, se pueden analizar uno por uno o en modo masivo mediante una interfaz web.
+
+![Cortex](https://user-images.githubusercontent.com/79227109/108465273-b20b4d00-724f-11eb-8c57-6fc07b07ea6b.PNG)
 
 MISP es una plataforma de inteligencia contra amenazas especialmente utilizada para la compartición, almacenaje y correlación de Indicadores de compromiso, persiguiendo tener una comunidad colaborativa sobre amenazas existentes, cuyo objetivo es ayudar a mejorar las contramedidas utilizadas contra los ataques dirigidos y establecer acciones preventivas y de detección.
 
-Junto con MISP , Cortex es el compañero perfecto para TheHive . TheHive le permite analizar decenas o cientos de observables en unos pocos clics aprovechando una o varias instancias de Cortex según sus necesidades de OPSEC y requisitos de rendimiento. Además, TheHive viene con un motor de plantillas de informes que le permite ajustar la salida de los analizadores Cortex a su gusto en lugar de tener que crear sus propios analizadores JSON para la salida Cortex.
+![MISP](https://user-images.githubusercontent.com/79227109/108465287-b7689780-724f-11eb-890c-0823d30cf19b.PNG)
+
+Junto con MISP, Cortex es el compañero perfecto para TheHive . TheHive le permite analizar decenas o cientos de observables en unos pocos clics aprovechando una o varias instancias de Cortex según sus necesidades de OPSEC y requisitos de rendimiento. Además, TheHive viene con un motor de plantillas de informes que le permite ajustar la salida de los analizadores Cortex a su gusto en lugar de tener que crear sus propios analizadores JSON para la salida Cortex.
 
 TheHive y Cortex cuentan con un cliente API cada uno, ambos son consumidos a través de modulos de python, esto permite la creación de un script que ayude a la automatización te estas tareas que deben ser ejecutadas por el FronEnd, lo cuál hace que el proceso de gestión de incidentes sea aún más eficientes.
 
