@@ -27,6 +27,18 @@ Para realizar una integración exitosa, es necesario entender el significado de 
 | url  | URL del servidor de Cortex  | 
 | key  | ApiKey de Cortex  |
 
-La ApiKey de Cortex la encontramos ingresando al portal e iniciando sesión con el usuario administrador, luego de esto se debe ingresar a la pestaña `Users` dar clic en **Reveal** en el usuario orgadmin, dado que el usuario administrador no puede ejecutar analizadores, solo gestionar usuarios. El resultado debe ser algo similar a esto:
+La ApiKey de Cortex la encontramos ingresando al portal e iniciando sesión con el usuario administrador, luego de esto se debe ingresar a la pestaña `Users` dar clic en **Reveal** en el usuario orgadmin, dado que el usuario administrador no puede ejecutar analizadores, solo gestionar usuarios. El resultado debe ser algo similar a esto (La Api Key está subrayada en amarillo}:
 
 ![apikyc](https://user-images.githubusercontent.com/79227109/108570932-f8f35400-72dc-11eb-961e-c732b25ff955.PNG)
+
+#### Ejemplo de configuración:
+En el siguiente ejemplo se muestra la integración de un servidor de Cortex que se encuentra instalado en el mismo host que se encuentra el TheHive:
+
+```
+cortex {
+  "CORTEX-ALIGO" {
+  url = "http://127.0.0.1:9001"
+  key = "59kn3AMItpJEouvqKgP8PkzpQfSAmUBn"
+  }
+}
+```
