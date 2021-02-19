@@ -28,7 +28,11 @@ Junto con MISP, Cortex es el compañero perfecto para TheHive . TheHive le permi
 
 TheHive y Cortex cuentan con un cliente API cada uno, ambos son consumidos a través de modulos de python, esto permite la creación de un script que ayude a la automatización te estas tareas que deben ser ejecutadas por el FronEnd, lo cuál hace que el proceso de gestión de incidentes sea aún más eficientes.
 
-El 
+El flujo de trabajo de nuestra plataforma consiste en el reenvío de logs de nuestros controles a TheHive a través de ElastAlert, para este procedimiento lo más importante es la elección de observables que contienen las alertas (Es decir, la información relevante que merece un analisis), luego de reenviadas las alertas a TheHive se crean casos en los cuales se corren analisis a los observables, esto dependiendo de que tipo de observables sean (Ip, dominio, hash, file) los analizadores utilizados para correr estos analisis son los que se encuentran contenidos en Cortex, todo esto se puede hacer desde TheHive gracias a la posibilidad de integración de estas dos herramientas, basado en los resultados obtenidos en los análisis tenemos la opción de ejecutar **reponders**, un responder es un programa que toma la entrada JSON y realiza una acción y produce un resultado básico de esa acción.  
+
+
+![sirp-overview](https://user-images.githubusercontent.com/79227109/108469498-54c6ca00-7256-11eb-9797-6535ff5d0253.png)
+
 
 ## Guías
 - [Documentación de TheHive](https://github.com/TheHive-Project/TheHiveDocs)
