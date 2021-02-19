@@ -15,13 +15,13 @@ Antes de intentar crear una regla ElastAlert que consuma la Api de TheHive se re
 | hive_alert_config  | Estructura de las alertas que se crearan en TheHive  | 
 | hive_observable_data_mapping  | Asignación de los observables, es decir la información que requiere ser analizada  | 
 
-Para crear una regla ElastAlert se debe ingresar al Dashboard de Kibana y en el menu de opciones buscamos el plugin llamado **ElastAlert** o ingresando a la URL `http://<kibana_host>:<port>/app/elastalert-kibana-plugin`, estando allí se debe observar algo similar a la imagen, damos clic en **Create Rule**:
-
-![ElastAlert](https://user-images.githubusercontent.com/79227109/108474622-9e66e300-725d-11eb-88d7-7aad32227ce8.PNG)
-
 El parametro **hive_apikey** se obtiene ingresando al portal de TheHive, especificamente en  `Admin/Users`, en esta ventana se observan los usuarios de la plataforma y los permisos que estos tienen, una vez se tenga claro cual es el usuario que nos interesa damos clic en **Reveal**, e inmediatamente se revelará el ApiKey, se debe observar algo similar a esto:
 
 ![ApiKey](https://user-images.githubusercontent.com/79227109/108475779-2a2d3f00-725f-11eb-8723-4efb13336d75.PNG)
+
+Para crear una regla ElastAlert se debe ingresar al Dashboard de Kibana y en el menu de opciones buscamos el plugin llamado **ElastAlert** o ingresando a la URL `http://<kibana_host>:<port>/app/elastalert-kibana-plugin`, estando allí se debe observar algo similar a la imagen, damos clic en **Create Rule**:
+
+![ElastAlert](https://user-images.githubusercontent.com/79227109/108474622-9e66e300-725d-11eb-88d7-7aad32227ce8.PNG)
 
 ### Ejemplo de creación de regla ElastAlert:
 La siguiente regla consiste en el reenvío de los eventos que del indice **fortiweb-*** con attack_type: SQL Injection
