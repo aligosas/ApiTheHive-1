@@ -1,7 +1,7 @@
 # Creación de reglas ElastAlert
 Para el reenvío de alertas del XOC a nuestra plataforma se utiliza la herramienta **ElastAlert Kibana Plugin** que es capaz de consumir la Api de TheHive, este plugin nos perimite la creación de reglas para obtener eventos por indice especifico que se encuentran almacenados en **ElasticSearch**.
 
-Para crear una regla ElastAlert que consuma la Api de TheHive se requiere configurar los siguientes parametros:
+Antes de intentar crear una regla ElastAlert que consuma la Api de TheHive se requiere tener claro los siguientes parametros:
 
 | Parametro | Descripción |
 | ------------- | ------------- |
