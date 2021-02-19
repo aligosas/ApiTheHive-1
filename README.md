@@ -6,4 +6,4 @@ Una plataforma de inteligencia de amenazas automatiza el procesamiento y anális
 # Documentación  
 Para la contrucción de la plataforma de inteligencia de amenazas se hizo uso de tres softwares open source, estos son: TheHive, Cortex y MISP. Con la integración de estas tecnologías se puede realizar la automatización de la gestión de los incidentes de seguridad, además mejora la confiabilidad y eficiencia de los reportes de amenazas generados para nuestros clientes.
 
-Cada tecnología usada cumple su función
+Cada tecnología utilizada en el desarrollo de este cumple una función especifica para garantizar el correcto funcionamiento de la plataforma, TheHive es una plataforma de respuesta a incidentes de seguridad gratuita
