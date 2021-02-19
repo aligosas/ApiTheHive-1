@@ -15,6 +15,7 @@ Antes de intentar crear una regla ElastAlert que consuma la Api de TheHive se re
 | hive_alert_config  | Estructura de las alertas que se crearan en TheHive  | 
 | hive_observable_data_mapping  | Asignación de los observables, es decir la información que requiere ser analizada  | 
 
+Para crear una regla ElastAlert se debe ingresar al Dashboard de Kibana y en el menu de opciones buscamos el plugin llamado **ElastAlert**
 
 ### Ejemplo de creación de regla ElastAlert:
 
