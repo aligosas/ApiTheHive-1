@@ -1,8 +1,6 @@
 ![Banner](https://user-images.githubusercontent.com/79227109/108462615-e3cde500-724a-11eb-8748-aa9a99645856.png)
 
-<p align="center" width="100%">
-    ### Sebastián Larrea Henao 
-</p>
+### Sebastián Larrea Henao 
 
 # Inteligencia de amenazas
 Una plataforma de inteligencia de amenazas automatiza el procesamiento y análisis de datos de múltiples fuentes mejorando la seguridad de SIEM.  Esto alivia la sobrecarga del personal proporcionándoles un medio eficaz de análisis en tiempo real. De este modo, los equipos de seguridad pueden responder con mayor rapidez y precisión a las amenazas.
