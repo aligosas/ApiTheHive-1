@@ -39,10 +39,10 @@ El flujo de trabajo de nuestra plataforma consiste en el reenvío de logs de nue
 - [Documentación de TheHive](https://github.com/TheHive-Project/TheHiveDocs)
 - [Documentación de Cortex](https://github.com/TheHive-Project/Cortex)
 - [Documentación de MISP](https://www.circl.lu/doc/misp/)
-- [Integración TheHive/Cortex/MISP](Docs/Integration.md)
-- [TheHive API](Docs/TheHiveApi.md)
-- [Cortex API](Docs/CortexApi.md)
-- [Script Threat Intelligence](Docs/Script.md)
+- [Integración TheHive/Cortex/MISP](/Docs/Integration.md)
+- [TheHive API](/Docs/TheHiveApi.md)
+- [Cortex API](/Docs/CortexApi.md)
+- [Script Threat Intelligence](/Docs/Script.md)
 
 ```
 git status
