@@ -11,8 +11,6 @@ cortex {
   "CORTEX-ALIGO" {
   url = "http://127.0.0.1:9001"
   key = "59kn3AMItpJEouvqKgP8PkzpQfSAmUBn"
-  #  # HTTP client configuration (SSL and proxy)
-  #  ws {}
   }
 }
 ```
