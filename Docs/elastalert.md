@@ -24,7 +24,7 @@ Para crear una regla ElastAlert se debe ingresar al Dashboard de Kibana y en el 
 ![ElastAlert](https://user-images.githubusercontent.com/79227109/108474622-9e66e300-725d-11eb-88d7-7aad32227ce8.PNG)
 
 ### Ejemplo de creación de regla ElastAlert:
-La siguiente regla consiste en el reenvío de los eventos que del indice **fortiweb-*** con attack_type: SQL Injection
+La siguiente regla consiste en el reenvío de los eventos que del indice **fortiweb-*** con attack_type: SQL Injection (Espacio para explicar filter y hive_alert_config). Lo más relevante en la configuración de esta regla es la asignación del observable, esto se debe a que de los eventos de FortiWeb nuestro interes principal es conocer si la ip que se encontraba generando estos ataques está reportada como maliciosa por alguno de nuestros analizadores.
  
 ```
 es_host: elasticsearch
@@ -35,7 +35,6 @@ index: fortiweb-*
 num_events: 1
 timeframe:
     seconds: 20
-    #minutes: 5
 filter:
 - query:
     query_string:
