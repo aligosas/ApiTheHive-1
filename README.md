@@ -33,13 +33,13 @@ TheHive y Cortex cuentan con un cliente API cada uno, ambos son consumidos a tra
 - [Documentación de TheHive](https://github.com/TheHive-Project/TheHiveDocs)
 - [Documentación de Cortex](https://github.com/TheHive-Project/Cortex)
 - [Documentación de MISP](https://www.circl.lu/doc/misp/)
-- [Instalación y configuración de TheHive](admin/webhooks.md)
-- [Instalación y configuración de Cortex](admin/cluster.md)
-- [Instalación y configuración de MISP](admin/updating.md)
-- [Integración TheHive/Cortex/MISP](admin/backup-restore.md)
-- [TheHive API](migration-guide.md)
-- [Cortex API](api/README.md)
-- [Script Threat Intelligence](api/README.md)
+- [Instalación y configuración de TheHive](Docs/TheHive.md)
+- [Instalación y configuración de Cortex](Docs/Cortex.md)
+- [Instalación y configuración de MISP](Docs/MISP.md)
+- [Integración TheHive/Cortex/MISP](Docs/Integration.md)
+- [TheHive API](Docs/TheHiveApi.md)
+- [Cortex API](Docs/CortexApi.md)
+- [Script Threat Intelligence](Docs/Script.md)
 
 ```
 git status
