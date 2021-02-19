@@ -32,7 +32,7 @@ El flujo de trabajo de nuestra plataforma consiste en el reenvío de logs de nue
 
 
 <p align="center" width="100%">
-    <img width="33%" src="https://user-images.githubusercontent.com/79227109/108469498-54c6ca00-7256-11eb-9797-6535ff5d0253.png"> 
+    <img width="80%" src="https://user-images.githubusercontent.com/79227109/108469498-54c6ca00-7256-11eb-9797-6535ff5d0253.png"> 
 </p>
 
 ## Guías
