@@ -44,9 +44,3 @@ El flujo de trabajo de nuestra plataforma consiste en el reenvío de logs de nue
 - [TheHive API](https://github.com/AligoXOC/ApiTheHive/blob/main/Docs/TheHiveApi.md)
 - [Cortex API](https://github.com/AligoXOC/ApiTheHive/blob/main/Docs/CortexApi.md)
 - [Script Threat Intelligence](https://github.com/AligoXOC/ApiTheHive/blob/main/Docs/Script.md)
-
-```
-git status
-```
-
-`git status`
