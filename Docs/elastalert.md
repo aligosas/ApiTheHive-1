@@ -3,14 +3,20 @@ Para el reenvío de alertas del XOC a la plataforma de ThreatIntelligence utiliz
 
 Para crear una regla que consuma la Api de TheHive se requiere configurar los siguientes parametros:
 
-| Parametros | Descripción |
+| Parametro | Descripción |
 | ------------- | ------------- |
+| es_host  | Contenido de la celda  |
+| es_port  | Contenido de la celda  | 
+| name  | Contenido de la celda  |
+| type  | Contenido de la celda  | 
+| index  | Contenido de la celda  |
+| query  | Contenido de la celda  | 
 | Contenido de la celda  | Contenido de la celda  |
 | Contenido de la celda  | Contenido de la celda  | 
 
 
 ```
-es_host: elasticsearch
+**es_host: elasticsearch**
 es_port: 9200
 name: thehive_fortiweb
 type: frequency
