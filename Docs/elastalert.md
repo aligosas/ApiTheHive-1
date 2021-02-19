@@ -7,13 +7,13 @@ Para crear una regla que consuma la Api de TheHive se requiere configurar los si
 | ------------- | ------------- |
 | es_host  | Hostname del servidor en el que se encuentra el servicio elasticsearch  |
 | es_port  | Puerto por el cual se consume el servicio elasticsearch  | 
-| name  | Contenido de la celda  |
-| type  | Contenido de la celda  | 
-| index  | Contenido de la celda  |
+| name  | Nombre de nuestra regla de ElastAlert  |
+| type  | preguntar | 
+| index  | Index de los eventos que nos interesa reenviar a la plataforma de TheHive  |
 | filter  | Contenido de la celda  | 
-| hive_connection  | Contenido de la celda  |
-| hive_alert_config  | Contenido de la celda  | 
-| hive_observable_data_mapping  | Contenido de la celda  | 
+| hive_connection  | Parametros necesarios para la conexión con la Api de TheHive |
+| hive_alert_config  | Estructura de las alertas que se crearan en TheHive  | 
+| hive_observable_data_mapping  | Asignación de los observables, es decir la información que requiere ser analizada  | 
 
 
 ```
