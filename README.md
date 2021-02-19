@@ -30,7 +30,7 @@ TheHive y Cortex cuentan con un cliente API cada uno, ambos son consumidos a tra
 
 
 ## Guías
-- [Documentación de TheHive](https://github.com/TheHive-Project/TheHiveDocs/tree/master/installation/install-guide.md)
+- [Documentación de TheHive](https://github.com/TheHive-Project/TheHiveDocs)
 - [Administration Guide](admin/admin-guide.md)
 - [Configuration Guide](admin/configuration.md)
 - [Webhooks](admin/webhooks.md)
