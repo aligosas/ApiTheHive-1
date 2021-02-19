@@ -1,5 +1,5 @@
 # Creación de reglas ElastAlert
-Para el reenvío de alertas del XOC a la plataforma de ThreatIntelligence utilizamos la herramienta **ElastAlert Kibana Plugin**, esta nos permite crear reglas en las que se configuran diferentes parametros con el fin de enviar alertas especificas, en este caso, se consumirá la Api de TheHive.
+Para el reenvío de alertas del XOC a la plataforma de ThreatIntelligence utilizamos la herramienta **ElastAlert Kibana Plugin**, con la configuración de las reglas podemos obtener eventos por indice especifico que se encuentran almacenados en **ElasticSearch**, en este caso, se consumirá la Api de TheHive.
 
 Para crear una regla que consuma la Api de TheHive se requiere configurar los siguientes parametros:
 
