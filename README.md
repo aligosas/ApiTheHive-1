@@ -39,6 +39,7 @@ El flujo de trabajo de nuestra plataforma consiste en el reenvío de logs de nue
 - [Documentación de TheHive](https://github.com/TheHive-Project/TheHiveDocs)
 - [Documentación de Cortex](https://github.com/TheHive-Project/Cortex)
 - [Documentación de MISP](https://www.circl.lu/doc/misp/)
+- [Creación de reglas ElastAlert](https://github.com/AligoXOC/ApiTheHive/blob/main/Docs/elastalert.md)
 - [Integración TheHive/Cortex/MISP](https://github.com/AligoXOC/ApiTheHive/blob/main/Docs/Integration.md)
 - [TheHive API](https://github.com/AligoXOC/ApiTheHive/blob/main/Docs/TheHiveApi.md)
 - [Cortex API](https://github.com/AligoXOC/ApiTheHive/blob/main/Docs/CortexApi.md)
