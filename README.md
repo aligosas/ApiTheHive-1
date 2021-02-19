@@ -2,4 +2,3 @@
 
 ## Threat Intelligence
 
-### Documantación
