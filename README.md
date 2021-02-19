@@ -32,7 +32,7 @@ TheHive y Cortex cuentan con un cliente API cada uno, ambos son consumidos a tra
 ## Guías
 - [Documentación de TheHive](https://github.com/TheHive-Project/TheHiveDocs)
 - [Documentación de Cortex](https://github.com/TheHive-Project/Cortex)
-- [Configuration Guide](admin/configuration.md)
+- [Documentación de MISP](https://www.circl.lu/doc/misp/)
 - [Webhooks](admin/webhooks.md)
 - [Cluster Configuration](admin/cluster.md)
 - [Updating](admin/updating.md)
