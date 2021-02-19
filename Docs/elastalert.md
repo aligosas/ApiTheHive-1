@@ -10,13 +10,14 @@ Para crear una regla que consuma la Api de TheHive se requiere configurar los si
 | name  | Contenido de la celda  |
 | type  | Contenido de la celda  | 
 | index  | Contenido de la celda  |
-| query  | Contenido de la celda  | 
-| Contenido de la celda  | Contenido de la celda  |
-| Contenido de la celda  | Contenido de la celda  | 
+| filter  | Contenido de la celda  | 
+| hive_connection  | Contenido de la celda  |
+| hive_alert_config  | Contenido de la celda  | 
+| hive_observable_data_mapping  | Contenido de la celda  | 
 
 
 ```
-**es_host: elasticsearch**
+es_host: elasticsearch
 es_port: 9200
 name: thehive_fortiweb
 type: frequency
