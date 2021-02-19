@@ -1,4 +1,9 @@
-![Banner](https://user-images.githubusercontent.com/79227109/108462615-e3cde500-724a-11eb-8748-aa9a99645856.png)
+img[src$="centerme"] {
+  display:block;
+  margin: 0 auto;
+}
+
+![Banner](https://user-images.githubusercontent.com/79227109/108462615-e3cde500-724a-11eb-8748-aa9a99645856.png?style=centerme)
 
 # Inteligencia de amenazas
 Una plataforma de inteligencia de amenazas automatiza el procesamiento y análisis de datos de múltiples fuentes mejorando la seguridad de SIEM.  Esto alivia la sobrecarga del personal proporcionándoles un medio eficaz de análisis en tiempo real. De este modo, los equipos de seguridad pueden responder con mayor rapidez y precisión a las amenazas.
@@ -9,19 +14,19 @@ Para la contrucción de la plataforma de inteligencia de amenazas se hizo uso de
 Cada tecnología utilizada en el desarrollo de este proyecto cumple una función especifica para garantizar el correcto funcionamiento del proyecto, TheHive es una plataforma diseñada para facilitar la vida de los SOC, CSIRT, CERT y cualquier profesional de seguridad de la información que se ocupe de incidentes de seguridad que deban ser investigados y tomados medidas. rápidamente. 
 
 
-![TheHive](https://user-images.githubusercontent.com/79227109/108465251-aae43f00-724f-11eb-8164-927e7af56013.PNG)
+![TheHive](https://user-images.githubusercontent.com/79227109/108465251-aae43f00-724f-11eb-8164-927e7af56013.PNG?style=centerme)
 
 
 Cortex es una herramienta que  permite analizar observables que se han recopilado, a escala, consultando una sola herramienta en lugar de varias, los objetos observables, como direcciones IP y de correo electrónico, URL, nombres de dominio, archivos o hashes, se pueden analizar uno por uno o en modo masivo mediante una interfaz web.
 
 
-![Cortex](https://user-images.githubusercontent.com/79227109/108465273-b20b4d00-724f-11eb-8c57-6fc07b07ea6b.PNG)
+![Cortex](https://user-images.githubusercontent.com/79227109/108465273-b20b4d00-724f-11eb-8c57-6fc07b07ea6b.PNG?style=centerme)
 
 
 MISP es una plataforma de inteligencia contra amenazas especialmente utilizada para la compartición, almacenaje y correlación de Indicadores de compromiso, persiguiendo tener una comunidad colaborativa sobre amenazas existentes, cuyo objetivo es ayudar a mejorar las contramedidas utilizadas contra los ataques dirigidos y establecer acciones preventivas y de detección.
 
 
-![MISP](https://user-images.githubusercontent.com/79227109/108465287-b7689780-724f-11eb-890c-0823d30cf19b.PNG)
+![MISP](https://user-images.githubusercontent.com/79227109/108465287-b7689780-724f-11eb-890c-0823d30cf19b.PNG?style=centerme)
 
 
 Junto con MISP, Cortex es el compañero perfecto para TheHive . TheHive le permite analizar decenas o cientos de observables en unos pocos clics aprovechando una o varias instancias de Cortex según sus necesidades de OPSEC y requisitos de rendimiento. Además, TheHive viene con un motor de plantillas de informes que le permite ajustar la salida de los analizadores Cortex a su gusto en lugar de tener que crear sus propios analizadores JSON para la salida Cortex.
@@ -31,7 +36,7 @@ TheHive y Cortex cuentan con un cliente API cada uno, ambos son consumidos a tra
 El flujo de trabajo de nuestra plataforma consiste en el reenvío de logs de nuestros controles a TheHive a través de ElastAlert, para este procedimiento lo más importante es la elección de observables que contienen las alertas (Es decir, la información relevante que merece ser analizada), luego de reenviadas las alertas a TheHive se crean casos en los cuales se corren analisis a los observables, esto dependiendo de que tipo de observables sean (Ip, dominio, hash, file) los analizadores utilizados para correr estos analisis son los que se encuentran contenidos en Cortex, todo esto se puede hacer desde TheHive gracias a la posibilidad de integración de estas dos herramientas, basado en los resultados obtenidos en los análisis tenemos la opción de ejecutar **reponders**, un responder es un programa que toma la entrada JSON y realiza una acción y produce un resultado básico de esa acción.  
 
 
-![sirp-overview](https://user-images.githubusercontent.com/79227109/108469498-54c6ca00-7256-11eb-9797-6535ff5d0253.png)
+![sirp-overview](https://user-images.githubusercontent.com/79227109/108469498-54c6ca00-7256-11eb-9797-6535ff5d0253.png?style=centerme)
 
 
 ## Guías
