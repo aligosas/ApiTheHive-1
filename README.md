@@ -14,6 +14,8 @@ MISP es una plataforma de inteligencia contra amenazas especialmente utilizada p
 
 Junto con MISP , Cortex es el compañero perfecto para TheHive . TheHive le permite analizar decenas o cientos de observables en unos pocos clics aprovechando una o varias instancias de Cortex según sus necesidades de OPSEC y requisitos de rendimiento. Además, TheHive viene con un motor de plantillas de informes que le permite ajustar la salida de los analizadores Cortex a su gusto en lugar de tener que crear sus propios analizadores JSON para la salida Cortex.
 
+TheHive y Cortex cuentan con un cliente API, los cuales permiten la ejecución 
+
 ```
 git status
 ```
