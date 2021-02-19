@@ -23,8 +23,8 @@ Para realizar una integración exitosa, es necesario entender el significado de 
 
 | Parametro | Descripción |
 | ------------- | ------------- |
-| CORTEX-ID  | Nombre de identificación del servidor de cortex, esto es importante dado que es un parametro que se debe pasar para correr análisis  |
-| url  | URL del servidor de cortex  | 
+| CORTEX-ID  | Nombre de identificación del servidor de Cortex, esto es importante dado que es un parametro que se debe pasar para correr análisis  |
+| url  | URL del servidor de Cortex  | 
 | key  | ApiKey de Cortex  |
 
 La ApiKey de Cortex la encontramos ingresando al portal e iniciando sesión con el usuario administrador, luego de esto se debe ingresar a la pestaña `Users` dar clic en **Reveal** en el usuario orgadmin, dado que el usuario administrador no puede ejecutar analizadores, solo gestionar usuarios. El resultado debe ser algo similar a esto:
