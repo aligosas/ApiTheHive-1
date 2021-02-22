@@ -56,9 +56,9 @@ lay.modules.enabled += connectors.misp.MispConnector
 misp {
   # Interval between consecutive MISP event imports in hours (h) or
   interval = 10m
-  "MISP-ALIGO" {
-  url = "https://127.0.0.1:8443"
-  key = "7RztDXL3dqUnFhZCMV7RzxTl1HAuDQbBMon90hxf"
+  "<MISP-ID>" {
+  url = "<misp-url>:<misp-port>"
+  key = "<misp-apikey>"
   #  ## MISP event filters
   #  # MISP filters is used to exclude events from the import.
   #  # Filter criteria are:
@@ -79,6 +79,9 @@ Para realizar una integración exitosa, es necesario entender el significado de 
 | CORTEX-ID  | Nombre de identificación del servidor de Cortex, esto es importante dado que es un parametro que se debe pasar para correr análisis  |
 | url  | URL del servidor de Cortex  | 
 | key  | ApiKey de Cortex  |
+| max-attributes  | Máximo número de atributos de los eventos importados  |
+| max-size | Tamaño máximo del JSON del evento |
+| max-age | Valor de la última fecha de publicación, en el caso de ejemplo se tiene configurado que importe los eventos de hacer **7 días** |
 
 La ApiKey de Cortex la encontramos ingresando al portal e iniciando sesión con el usuario administrador, luego de esto se debe ingresar a la pestaña `Users` dar clic en **Reveal** en el usuario orgadmin, dado que el usuario administrador no puede ejecutar analizadores, solo gestionar usuarios. El resultado debe ser algo similar a esto (La Api Key está subrayada en amarillo}:
 
