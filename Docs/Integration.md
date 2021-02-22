@@ -70,9 +70,9 @@ Para realizar una integración exitosa, es necesario entender el significado de 
 | Parametro | Descripción |
 | ------------- | ------------- |
 | interval  | Intervalo de tiempo entra la importación de 2 eventos  |
-| MISP-ID  | Nombre de identificación del servidor de Cortex, esto es importante dado que es un parametro que se debe pasar para correr análisis  |
-| url  | URL del servidor de Cortex  | 
-| key  | ApiKey de Cortex  |
+| MISP-ID  | Nombre de identificación del servidor de MISP, esto es importante dado que es un parametro que se debe pasar para correr análisis  |
+| url  | URL del servidor de MISP  | 
+| key  | ApiKey de MISP  |
 | max-attributes  | Máximo número de atributos de los eventos importados  |
 | max-size | Tamaño máximo del JSON del evento |
 | max-age | Valor de la última fecha de publicación, en el caso de ejemplo se tiene configurado que importe los eventos de hacer **7 días** |
