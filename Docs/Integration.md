@@ -54,19 +54,12 @@ Para realizar la integración de estas dos herramientas solo es necesario agrega
 lay.modules.enabled += connectors.misp.MispConnector
 
 misp {
-  # Interval between consecutive MISP event imports in hours (h) or
   interval = 10m
   "<MISP-ID>" {
   url = "<misp-url>:<misp-port>"
   key = "<misp-apikey>"
-  #  ## MISP event filters
-  #  # MISP filters is used to exclude events from the import.
-  #  # Filter criteria are:
-  #  # The number of attribute
   max-attributes = 1000
-  #  # The size of its JSON representation
   max-size = 1 MiB
-  #  # The age of the last publish date
   max-age = 7 days
   }
 }
@@ -76,6 +69,7 @@ Para realizar una integración exitosa, es necesario entender el significado de 
 
 | Parametro | Descripción |
 | ------------- | ------------- |
+| interval  | Intervalo de tiempo entra la importación de 2 eventos  |
 | CORTEX-ID  | Nombre de identificación del servidor de Cortex, esto es importante dado que es un parametro que se debe pasar para correr análisis  |
 | url  | URL del servidor de Cortex  | 
 | key  | ApiKey de Cortex  |
