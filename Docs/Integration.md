@@ -110,6 +110,8 @@ Aún siguiendo de manera correcta los pasos descritos anteriormente en esta guí
     <img width="50%" src="https://user-images.githubusercontent.com/79227109/108776258-2be15600-7530-11eb-94f2-f34877b94126.PNG"> 
 </p>
 
+En el archivo de logs de TheHive `/var/log/thehive/application.log` debería estar un log con la siguiente información:
+
 ```
 [INFO] from connectors.misp.MispSynchro in application-akka.actor.default-dispatcher-16 - Misp synchronization failed
 java.net.ConnectException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find 
