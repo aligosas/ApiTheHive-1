@@ -70,7 +70,7 @@ Para realizar una integración exitosa, es necesario entender el significado de 
 | Parametro | Descripción |
 | ------------- | ------------- |
 | interval  | Intervalo de tiempo entra la importación de 2 eventos  |
-| CORTEX-ID  | Nombre de identificación del servidor de Cortex, esto es importante dado que es un parametro que se debe pasar para correr análisis  |
+| MISP-ID  | Nombre de identificación del servidor de Cortex, esto es importante dado que es un parametro que se debe pasar para correr análisis  |
 | url  | URL del servidor de Cortex  | 
 | key  | ApiKey de Cortex  |
 | max-attributes  | Máximo número de atributos de los eventos importados  |
