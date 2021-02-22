@@ -102,6 +102,4 @@ misp {
 ### Error en la integración:
 Aún siguiendo de manera correcta los pasos descritos anteriormente en esta guía, al iniciar sesión en TheHive e ir a la pestaña `Administrator/About` nos encontraremos que la integración falló, el error debe verse de la siguiente manera:
 
-<p align="center" width="100%">
-  <img width="80%" src="https://user-images.githubusercontent.com/79227109/108775017-84afef00-752e-11eb-9ee4-8396ab6e5c21.PNG"> 
-</p>
+![MISP Error](https://user-images.githubusercontent.com/79227109/108775980-c725fb80-752f-11eb-9252-68c3742ccf33.PNG)
