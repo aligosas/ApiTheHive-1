@@ -77,7 +77,7 @@ Para realizar una integración exitosa, es necesario entender el significado de 
 | max-size | Tamaño máximo del JSON del evento |
 | max-age | Valor de la última fecha de publicación, en el caso de ejemplo se tiene configurado que importe los eventos de hacer **7 días** |
 
-La ApiKey de Cortex la encontramos ingresando al portal e iniciando sesión con el usuario administrador, luego de esto se debe ingresar a la pestaña `Users` dar clic en **Reveal** en el usuario orgadmin, dado que el usuario administrador no puede ejecutar analizadores, solo gestionar usuarios. El resultado debe ser algo similar a esto (La Api Key está subrayada en amarillo}:
+La ApiKey de MISP la encontramos ingresando al portal e iniciando sesión con el usuario administrador, luego de esto se debe ingresar a la pestaña `Administration/List users` para tomar la ApiKey de algún usuario, debemos dar clic en el simbolo del **ojo**. El resultado debe ser algo similar a esto (La Api Key está subrayada en amarillo}:
 
 ![apikyc](https://user-images.githubusercontent.com/79227109/108570932-f8f35400-72dc-11eb-961e-c732b25ff955.PNG)
 
