@@ -35,6 +35,59 @@ La ApiKey de Cortex la encontramos ingresando al portal e iniciando sesión con 
 En el siguiente ejemplo se muestra la integración de un servidor de Cortex que se encuentra instalado en el mismo host que se encuentra el TheHive:
 
 ```
+play.modules.enabled += connectors.cortex.CortexConnector
+
+cortex {
+  "CORTEX-ALIGO" {
+  url = "http://127.0.0.1:9001"
+  key = "59kn3AMItpJEouvqKgP8PkzpQfSAmUBn"
+  }
+}
+```
+
+## Integración de TheHive y MISP
+La integración de estos dos softwares nos permitirá publicar observables en MISP desde TheHive y viceversa.
+
+Para realizar la integración de estas dos herramientas solo es necesario agregar la siguiente configuración al archivo de configuración de TheHive, generalmente este archivo se encuentra en `/etc/thehive/applications.conf`:
+
+```
+lay.modules.enabled += connectors.misp.MispConnector
+
+misp {
+  # Interval between consecutive MISP event imports in hours (h) or
+  interval = 10m
+  "MISP-ALIGO" {
+  url = "https://127.0.0.1:8443"
+  key = "7RztDXL3dqUnFhZCMV7RzxTl1HAuDQbBMon90hxf"
+  #  ## MISP event filters
+  #  # MISP filters is used to exclude events from the import.
+  #  # Filter criteria are:
+  #  # The number of attribute
+  max-attributes = 1000
+  #  # The size of its JSON representation
+  max-size = 1 MiB
+  #  # The age of the last publish date
+  max-age = 7 days
+  }
+}
+```
+
+Para realizar una integración exitosa, es necesario entender el significado de los siguientes parametros:
+
+| Parametro | Descripción |
+| ------------- | ------------- |
+| CORTEX-ID  | Nombre de identificación del servidor de Cortex, esto es importante dado que es un parametro que se debe pasar para correr análisis  |
+| url  | URL del servidor de Cortex  | 
+| key  | ApiKey de Cortex  |
+
+La ApiKey de Cortex la encontramos ingresando al portal e iniciando sesión con el usuario administrador, luego de esto se debe ingresar a la pestaña `Users` dar clic en **Reveal** en el usuario orgadmin, dado que el usuario administrador no puede ejecutar analizadores, solo gestionar usuarios. El resultado debe ser algo similar a esto (La Api Key está subrayada en amarillo}:
+
+![apikyc](https://user-images.githubusercontent.com/79227109/108570932-f8f35400-72dc-11eb-961e-c732b25ff955.PNG)
+
+#### Ejemplo de configuración:
+En el siguiente ejemplo se muestra la integración de un servidor de Cortex que se encuentra instalado en el mismo host que se encuentra el TheHive:
+
+```
 cortex {
   "CORTEX-ALIGO" {
   url = "http://127.0.0.1:9001"
