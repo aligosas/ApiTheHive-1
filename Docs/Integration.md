@@ -6,7 +6,7 @@ Junto con MISP, Cortex es el compañero perfecto para TheHive. TheHive le permit
 ## Integración de TheHive y Cortex
 Uniendo las herramientas TheHive y Cortex podemos tener una plataforma de gestión de incidentes de seguridad que pueda ejecutar análisis y obtener los reportes de estos de una forma sencilla consumiendo los analizadores que nos provee Cortex, además de esto podemos crear respuestas a los resultados de los análisis, esto se logra con los responders que también nos provee este software.
 
-Para realizar la integración de estas dos herramientas solo es necesario agregar la siguiente configuración al archivo de configuración de TheHive, generalmente este archivo se encuentra en `/etc/thehive/applications.conf`:
+Para realizar la integración de estas dos herramientas solo es necesario agregar la siguiente configuración al archivo de configuración de TheHive, generalmente este archivo se encuentra en `/etc/thehive/application.conf`:
 
 ```
 play.modules.enabled += connectors.cortex.CortexConnector
@@ -50,7 +50,7 @@ Es necesario reiniciar el servicio de TheHive, usando el comando: `service thehi
 ## Integración de TheHive y MISP
 La integración de estos dos softwares nos permitirá publicar observables en MISP desde TheHive y viceversa.
 
-Para realizar la integración de estas dos herramientas solo es necesario agregar la siguiente configuración al archivo de configuración de TheHive, generalmente este archivo se encuentra en `/etc/thehive/applications.conf`:
+Para realizar la integración de estas dos herramientas solo es necesario agregar la siguiente configuración al archivo de configuración de TheHive, generalmente este archivo se encuentra en `/etc/thehive/application.conf`:
 
 ```
 play.modules.enabled += connectors.misp.MispConnector
@@ -120,5 +120,14 @@ valid certification path to requested target
 
 Este error surge porque TheHive interpreta que la conexión con MISP no es segura, dado que no hay un certificado valido para la comunicación entre ellos, para solucionar este error existen dos soluciones.
 
-- [Añadir un certificado válido]
-- [Omitir checkeo del certificado]
+- Añadir un certificado válido:
+
+(Pendiente)
+
+- Omitir checkeo del certificado:
+
+Este método no debe ser aplicado en producción, pero nos sirve para realizar una integración no segura entre las herramientas, para indicarle a TheHive que omita el checkeo del certificado basta con agregar la siguiente linea en `/etc/thehive/application.conf`:
+
+```
+play.ws.ssl.loose.acceptAnyCertificate = true
+```
