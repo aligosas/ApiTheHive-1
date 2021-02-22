@@ -112,5 +112,6 @@ Aún siguiendo de manera correcta los pasos descritos anteriormente en esta guí
 
 ```
 [INFO] from connectors.misp.MispSynchro in application-akka.actor.default-dispatcher-16 - Misp synchronization failed
-java.net.ConnectException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+java.net.ConnectException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find 
+valid certification path to requested target
 ```
