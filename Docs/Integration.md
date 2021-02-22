@@ -117,3 +117,8 @@ En el archivo de logs de TheHive `/var/log/thehive/application.log` debería est
 java.net.ConnectException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find 
 valid certification path to requested target
 ```
+
+Este error surge porque TheHive interpreta que la conexión con MISP no es segura, dado que no hay un certificado valido para la comunicación entre ellos, para solucionar este error existen dos soluciones.
+
+- [Añadir un certificado válido]
+- [Omitir checkeo del certificado]
