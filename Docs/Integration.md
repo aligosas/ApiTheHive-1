@@ -51,7 +51,7 @@ La integración de estos dos softwares nos permitirá publicar observables en MI
 Para realizar la integración de estas dos herramientas solo es necesario agregar la siguiente configuración al archivo de configuración de TheHive, generalmente este archivo se encuentra en `/etc/thehive/applications.conf`:
 
 ```
-lay.modules.enabled += connectors.misp.MispConnector
+play.modules.enabled += connectors.misp.MispConnector
 
 misp {
   interval = 10m
