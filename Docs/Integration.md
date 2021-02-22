@@ -31,7 +31,7 @@ La ApiKey de Cortex la encontramos ingresando al portal e iniciando sesión con 
 
 ![apikyc](https://user-images.githubusercontent.com/79227109/108570932-f8f35400-72dc-11eb-961e-c732b25ff955.PNG)
 
-### Ejemplo de configuración:
+#### Ejemplo de configuración:
 En el siguiente ejemplo se muestra la integración de un servidor de Cortex que se encuentra instalado en el mismo host que se encuentra el TheHive:
 
 ```
@@ -81,7 +81,7 @@ La ApiKey de MISP la encontramos ingresando al portal e iniciando sesión con el
 
 ![MISP apik](https://user-images.githubusercontent.com/79227109/108774500-bbd1d080-752d-11eb-8166-13dfff856633.PNG)
 
-### Ejemplo de configuración:
+#### Ejemplo de configuración:
 En el siguiente ejemplo se muestra la integración de un servidor de MISP que se encuentra instalado en el mismo host que se encuentra el TheHive:
 
 ```
@@ -99,7 +99,7 @@ misp {
 }
 ```
 
-### Error en la integración:
+#### Error en la integración:
 Aún siguiendo de manera correcta los pasos descritos anteriormente en esta guía, al iniciar sesión en TheHive e ir a la pestaña `Administrator/About` nos encontraremos que la integración falló, el error debe verse de la siguiente manera:
 
 <p align="center" width="100%">
