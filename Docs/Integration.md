@@ -102,5 +102,3 @@ misp {
 ### Error en la integración:
 Aún siguiendo de manera correcta los pasos descritos anteriormente en esta guía, al iniciar sesión en TheHive e ir a la pestaña `Administrator/About` nos encontraremos que la integración falló, el error debe verse de la siguiente manera:
 
-
-
