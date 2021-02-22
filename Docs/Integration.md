@@ -77,18 +77,24 @@ Para realizar una integración exitosa, es necesario entender el significado de 
 | max-size | Tamaño máximo del JSON del evento |
 | max-age | Valor de la última fecha de publicación, en el caso de ejemplo se tiene configurado que importe los eventos de hacer **7 días** |
 
-La ApiKey de MISP la encontramos ingresando al portal e iniciando sesión con el usuario administrador, luego de esto se debe ingresar a la pestaña `Administration/List users` para tomar la ApiKey de algún usuario, debemos dar clic en el simbolo del **ojo**. El resultado debe ser algo similar a esto (La Api Key está subrayada en amarillo}:
+La ApiKey de MISP la encontramos ingresando al portal e iniciando sesión con el usuario administrador, luego de esto se debe ingresar a la pestaña `Administration/List users`. para tomar la ApiKey de algún usuario, debemos dar clic en el simbolo del **ojo**. El resultado debe ser algo similar a esto (La Api Key está subrayada en amarillo}:
 
-![apikyc](https://user-images.githubusercontent.com/79227109/108570932-f8f35400-72dc-11eb-961e-c732b25ff955.PNG)
+![MISP apik](https://user-images.githubusercontent.com/79227109/108774500-bbd1d080-752d-11eb-8166-13dfff856633.PNG)
 
 #### Ejemplo de configuración:
-En el siguiente ejemplo se muestra la integración de un servidor de Cortex que se encuentra instalado en el mismo host que se encuentra el TheHive:
+En el siguiente ejemplo se muestra la integración de un servidor de MISP que se encuentra instalado en el mismo host que se encuentra el TheHive:
 
 ```
-cortex {
-  "CORTEX-ALIGO" {
-  url = "http://127.0.0.1:9001"
-  key = "59kn3AMItpJEouvqKgP8PkzpQfSAmUBn"
+play.modules.enabled += connectors.misp.MispConnector
+
+misp {
+  interval = 10m
+  "<MISP-ALIGO>" {
+  url = "https://127.0.0.1:8443"
+  key = "7RztDXL3dqUnFhZCMV7RzxTl1HAuDQbBMon90hxf"
+  max-attributes = 1000
+  max-size = 1 MiB
+  max-age = 7 days
   }
 }
 ```
