@@ -12,6 +12,7 @@ from thehive4py.query import *
 
 #Cortex Imports
 from cortex4py.api import Api
+from cortex4py.query import *
 
 #APIs Connection
 hiveServer = cfg.ApiConfig["TheHiveHost"] + ":" + cfg.ApiConfig["TheHivePort"]

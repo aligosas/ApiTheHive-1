@@ -50,15 +50,16 @@ def CreateCase(alert):
     if response.status_code == 201:
         case_id = response.json()['id']
         case_number = response.json()['caseId']
+        case_title = response.json()['title']
         msg = "Se creó correctamente el caso numero " +  str(case_number) + " con id " + case_id
         Logging("[INFO]",msg)
 
     else:
         Logging("[ERROR]","No fue posible crear el caso, la Api falló")
     
-    return case_id
+    return case_id, case_title
 
-def CreateCaseObservable(artifact, case_id):
+def CreateCaseObservable(artifact, case_id, case_title):
 
     try:       
         caseObservable = CaseObservable(dataType=artifact['dataType'],
@@ -83,12 +84,12 @@ def CreateCaseObservable(artifact, case_id):
     if response.status_code == 201:
 
         artifact_id = response.json()['id']
-        msg = "Se asoció correctamente el observable " + artifact['data'] + " con el caso " + case_id
+        msg = "Se asoció correctamente el observable " + artifact['data'] + " con el caso " + case_title
         Logging("[INFO]",msg)
         return artifact_id
 
     else:
-        msg = "No fue posible crear el observable para el caso " + case_id + ", la Api falló"
+        msg = "No fue posible crear el observable para el caso " + case_title + ", la Api falló"
         Logging("[ERROR]",msg)
         return None
 

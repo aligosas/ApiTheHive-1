@@ -17,6 +17,8 @@ Logging("[INFO]","Comienza la ejecución del script")
 
 cortex_id = cfg.ApiConfig["CortexId"]
 
+ReportFile = open("Report.log", "a+")
+
 #date = datetime.datetime.now()
 #date = date.strftime("%d/%m/%Y %H:%M:%S")
 date = "09/01/2021 15:24:00"
@@ -34,12 +36,13 @@ if response.status_code == 200:
     try:
 
         for alert in alerts:
-            case_id = CreateCase(alert)
+            case_id, case_title = CreateCase(alert)
             artifacts = alert['artifacts']
 
             for artifact in artifacts:
-                artifact_id = CreateCaseObservable(artifact, case_id)
+                artifact_id = CreateCaseObservable(artifact, case_id, case_title)
                 analyzers = SearchAnalyzers(artifact['dataType'])
+                ReportFile.write("Observable: " + artifact['data'] + "\n")
                     
                 for analyzer in analyzers:
                     analyzer_id = analyzer.analyzerDefinitionId
@@ -54,14 +57,15 @@ if response.status_code == 200:
 
                         report = GetReport(job_id)
                         try:
-                            print(report['summary']['taxonomies'][0]['value'])			
+                            ReportFile.write(analyzer_id + ": " + report['summary']['taxonomies'][0]['value']  + "\n")
                         except:
-                           print("Hola")                        
+                            ReportFile.write("Falló el análisis \n")
 
                     else:
                         msg = "Ocurrió un error al intetar correr el análisis " + analyzer_id  + " del observable " + artifact['data'] + " del caso " + case_id
                         Logging("[ERROR]",msg)
 
+                    ReportFile.write("\n")
 
     except CaseException as e:
         msg = "Ocurrió fallo al intentar crear caso para la alerta con id: " + alert['id']
@@ -69,3 +73,5 @@ if response.status_code == 200:
 
 else:
     Logging("[ERROR]","Tu petición para listar las alertas falló")
+
+ReportFile.close()
