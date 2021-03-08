@@ -123,3 +123,26 @@ def GetReport(job_id):
         msg = "El análisis que se intentaba correr falló, se recomienda validar que la configuración de Cortex se encuentre bien"
         Logging("[ERROR]",msg)
         return None
+
+def AnalyzeReport(score, analyzer):
+
+    if analyzer == 'VirusTotal_GetReport_3_0':
+        
+        score = score.split()[0]
+        return score
+
+    elif analyzer == 'OTXQuery_2_0':
+    
+        return score
+
+    elif analyzer == 'DShield_lookup_1_0':
+
+        score = score.split()
+        score = int(score[0]) + int(score[3]) + int(score[6]) 
+        return score        
+
+    else:
+ 
+        msg = "El analizador " + analyzer + " todavía no cuenta con un método para el análisis de sus reportes"
+        Logging("[ERROR]",msg)
+
