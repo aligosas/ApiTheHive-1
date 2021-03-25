@@ -25,7 +25,7 @@ En este link se encuentra una explicación de las demás consultas que pueden se
 
 ### 2. Create Case: 
 
-Este método es utilizado para asociar las alertas recibidas, esto con el fin de poder correr análisis sobre los observables contenidos dentro de estas, la sintaxis de este metodo es el siguiente: `create_case(case)`.Al metodo se le debe enviar un objeto tipo Case (La construcción del caso), el cuál requiere los siguientes parametros:
+Este método es utilizado para crear casos y posteriormente asociar los observables de las alertas con estos, con el fin de poder correr análisis sobre los observables contenidos dentro de estas, la sintaxis de este metodo es el siguiente: `create_case(case)`.Al metodo se le debe enviar un objeto tipo Case (La construcción del caso), el cuál requiere los siguientes parametros:
 
 #### Tareas:
 
@@ -97,4 +97,41 @@ case = Case(title=title_case,
         customFields=customFields)
 
 response = apiH.create_case(case)
+```
+
+### 3. Create Case Observable: 
+
+Para asociar el caso creado anteriormente con los observables contenidos en las alertas recibidas es necesario utilizar este método, la sintaxis del metodo es la siguiente: `create_case_observable(case_id, caseObservable)`, a este metodo es necesario enviarle los siguientes dos parametros:
+
+| Parámetro | Descripción |
+| ------------- | ------------- |
+| Case id  | ID del caso creado anteriormente, a este caso se asociarán los observables contenidos en las alertas  |
+| Case observable | Para asociar los observables con un caso es necesario definir un objeto caseObservable.  | 
+
+#### Objeto caseObservable:
+
+En este objeto simplemente se rellenan algunos campos para la asociación del observable, los datos más relevantes son el ob
+
+```
+caseObservable = CaseObservable(dataType=<Tipo de dato>,
+                                data=<Obserbable>,
+                                tlp=<tlp>,
+                                ioc=<¿El dato es un ioc? True o False>,
+                                tags=<Etiquetas>,
+                                message=<Mensaje>
+                                )
+```
+
+
+#### Ejemplo:
+
+```
+caseObservable = CaseObservable(dataType=artifact['dataType'],
+                                data=artifact['data'],
+                                tlp=artifact['tlp'],
+                                ioc=artifact['ioc'],
+                                tags=artifact['tags'],
+                                message=artifact['message']
+                                )
+response = apiH.create_case_observable(case_id, caseObservable)
 ```
