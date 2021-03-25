@@ -21,4 +21,4 @@ response = apiH.find_alerts(query=query, sort=['-createdAt'], range='all')
 Dónde <fecha>, en formato timestamp, es el dato utilizado como criterio para la toma de las alertas, la función <Gte> se encarga de tomar las alertas en las que la fecha sea mayor a <fecha>. Se toman todas las alertas que cumplan con la consulta indicada, en orden descendente.
 ```
 
-En este link se encuentra una explicación de las demás consultas que pueden ser utilizadas: https://thehive-project.github.io/TheHive4py/reference/query/
+En este link se encuentra una explicación de las demás consultas que pueden ser utilizadas: [Consultas de TheHive4py](https://thehive-project.github.io/TheHive4py/reference/query/)
