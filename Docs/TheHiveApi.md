@@ -11,3 +11,12 @@ Este método es utilizado para traer las alertas que se están enviando a TheHiv
 | query  | Consulta utilizada para traer alertas en especifico, es decir que cumplan con ciertas condiciones  |
 | sort  | Lista de campos para ordenar el resultado. Prefije el nombre del campo con `-` para orden descendente y `+` para orden ascendente  | 
 | range | Un rango que describe el número de filas que se devolverán.  |
+
+#### Ejemplo:
+
+```
+query = Gte('date', timestamp)
+response = apiH.find_alerts(query=query, sort=['-createdAt'], range='all')
+
+Dónde **timestamp** 
+```
