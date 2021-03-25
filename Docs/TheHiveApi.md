@@ -86,9 +86,7 @@ customFields = CustomFieldHelper()\
         .add_number('cvss', 9)\
         .build()
 
-title_case = 'Caso de ejemplo'
-
-case = Case(title=title_case,
+case = Case(title='Caso de prueba',
         tlp=3,
         flag=True,
         tags=['TheHive4Py', artifacts],
