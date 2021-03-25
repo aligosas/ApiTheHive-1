@@ -18,7 +18,7 @@ analyzers = apiC.analyzers.get_by_type('domain')
 
 ### 2. Get jobs by id: 
 
-Para Cortex la ejecución de un análisis o un responder es un **job**, Luego de realizar el análisis de los observables es necesario obtener el reporte para poder tomar acciones. La sintaxis es la siguiente: `jobs.get_by_id(job_id)`
+Para Cortex la ejecución de un análisis o un responder es un **job**, para poder obtener el reporte primero es necesario obtener el resultado del análisis. La sintaxis es la siguiente: `jobs.get_by_id(job_id)` y el campo en el cual se encuentra el resultado del análisis es `job.json()['status']`, este puede ser Success o Failure.
 
 ```
 job = apiC.jobs.get_by_id(job_id)
@@ -26,3 +26,12 @@ job = apiC.jobs.get_by_id(job_id)
 
 **Nota:** El job_id de un analisis se puede obtener al correr el método **run_analyzer**, el JSON que este retorna contiene un campo llamado **cortexJobId**.
 
+### 3. Get report by id: 
+
+Para obtener el reporte de un **job** basta con utilizar el siguiente metodo: jobs.get_report(job.id).report
+
+```
+report = apiC.jobs.get_report(job.id).report
+```
+
+**Nota:** El objeto **job** fue definido en el punto 2. Este metodo retorna un JSON con el reporte completo del análisis realizado.
