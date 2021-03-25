@@ -8,7 +8,7 @@ Antes de intentar crear una regla ElastAlert que consuma la Api de TheHive se re
 | es_host  | Hostname del servidor en el que se encuentra el servicio elasticsearch  |
 | es_port  | Puerto por el cual se consume el servicio elasticsearch  | 
 | name  | Nombre de nuestra regla de ElastAlert  |
-| type  | preguntar | 
+| type  | Tipo de regla | 
 | index  | Index elasticsearch de los eventos que nos interesa reenviar a la plataforma de TheHive  |
 | filter  | Contenido de la celda  | 
 | hive_connection  | Parametros necesarios para la conexión con la Api de TheHive |
