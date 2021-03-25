@@ -60,29 +60,41 @@ customFields = CustomFieldHelper()\
 
 #### Objeto Case:
 
-```
-    case = Case(title=title_case,
-                tlp=3,
-                flag=True,
-                tags=['TheHive4Py', artifacts],
-                description='N/A',
-                tasks=tasks,
-                customFields=customFields)
-```
+El objeto Case se encarga de realizar la construcción del Caso, relaciona la tarea anteriormente configurada y rellena los campos personalizados, con esto ya se tiene un caso, sin embargo no asocia el caso a la alerta u observables.
 
-| Parámetro | Descripción |
-| ------------- | ------------- |
-| query  | Consulta utilizada para traer alertas en especifico, es decir que cumplan con ciertas condiciones  |
-| sort  | Lista de campos para ordenar el resultado. Prefije el nombre del campo con `-` para orden descendente y `+` para orden ascendente  | 
-| range | Un rango que describe el número de filas que se devolverán.  |
+```
+case = Case(title=title_case,
+        tlp=3,
+        flag=True,
+        tags=['TheHive4Py'],
+        description='N/A',
+        tasks=tasks,
+        customFields=customFields)
+```
 
 #### Ejemplo:
 
 ```
-query = Gte('date', fecha)
-response = apiH.find_alerts(query=query, sort=['-createdAt'], range='all')
+tasks = [
+        CaseTask(title='Revisión', status='Waiting', flag=True)
+]
+
+customFields = CustomFieldHelper()\
+        .add_boolean('booleanField', True)\
+        .add_string('businessImpact', 'HIGH')\
+         .add_date('occurDate', int(time.time())*1000)\
+        .add_number('cvss', 9)\
+        .build()
+
+title_case = 'Caso de ejemplo'
+
+case = Case(title=title_case,
+        tlp=3,
+        flag=True,
+        tags=['TheHive4Py', artifacts],
+        description='N/A',
+        tasks=tasks,
+        customFields=customFields)
+
+response = apiH.create_case(case)
 ```
-
-Dónde **fecha**, en formato timestamp, es el dato utilizado como criterio para la toma de las alertas, la función <Gte> se encarga  de tomar las alertas en las que la fecha sea mayor a **fecha**. Se toman todas las alertas que cumplan con la consulta indicada, en orden descendente.
-
-En este link se encuentra una explicación de las demás consultas que pueden ser utilizadas: [Consultas de TheHive4py](https://thehive-project.github.io/TheHive4py/reference/query/)
