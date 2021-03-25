@@ -18,7 +18,7 @@ analyzers = apiC.analyzers.get_by_type('domain')
 
 ### 2. Get jobs by id: 
 
-Luego de realizar el análisis de los observables es necesario obtener el reporte para poder tomar acciones. La sintaxis es la siguiente: `jobs.get_by_id(job_id)`
+Para Cortex la ejecución de un análisis o un responder es un **job**, Luego de realizar el análisis de los observables es necesario obtener el reporte para poder tomar acciones. La sintaxis es la siguiente: `jobs.get_by_id(job_id)`
 
 ```
 job = apiC.jobs.get_by_id(job_id)
