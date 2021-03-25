@@ -19,7 +19,7 @@ def Filter(alerts):
     return filtered_alerts
 
 def CreateCase(alert):
-    
+ 
     tasks = [
         CaseTask(title='Revisión', status='Waiting', flag=True)
     ]
@@ -56,12 +56,12 @@ def CreateCase(alert):
 
     else:
         Logging("[ERROR]","No fue posible crear el caso, la Api falló")
-    
+
     return case_id, case_title
 
 def CreateCaseObservable(artifact, case_id, case_title):
 
-    try:       
+    try:
         caseObservable = CaseObservable(dataType=artifact['dataType'],
                                 data=artifact['data'],
                                 tlp=artifact['tlp'],
@@ -89,6 +89,7 @@ def CreateCaseObservable(artifact, case_id, case_title):
         return artifact_id
 
     else:
+
         msg = "No fue posible crear el observable para el caso " + case_title + ", la Api falló"
         Logging("[ERROR]",msg)
         return None
@@ -110,9 +111,9 @@ def Logging(title, message):
 def GetReport(job_id):
 
     job = apiC.jobs.get_by_id(job_id)
-    
+
     if job.json()['status'] == "Success":
-        
+
         report = apiC.jobs.get_report(job.id).report
         msg = "Se corrió el análisis correctamente, status: " + job.json()['status'] + ", obteniendo reporte para el análisis"
         Logging("[INFO]",msg)
@@ -146,3 +147,18 @@ def AnalyzeReport(score, analyzer):
         msg = "El analizador " + analyzer + " todavía no cuenta con un método para el análisis de sus reportes"
         Logging("[ERROR]",msg)
 
+
+def SendNotification(analysis_score, dataType, observable):
+
+    BOT_TOKEN="1628114474:AAHO9LvKHts2wTKAn2LR0LQPtVfqaW0iYqs"
+    URL="https://api.telegram.org/bot" + BOT_TOKEN + "/sendMessage"
+    GROUP_ID="-552607247"
+    MENSAJE="[Linea Directa][XOAR]: Se han detectado comportamientos sospechosos provenientes de la " + dataType + " " +  observable + ", la " + dataType + " se encuentra reportada por " + str(analysis_score) + " motores."
+    TEXT = "curl -s -X POST "  + URL + " -d chat_id=" + GROUP_ID + " -d text=\""
+    TEXT2 = "\" > /dev/null"
+
+    cmd =   TEXT + MENSAJE + TEXT2
+    os.system(cmd)
+
+    msg = "Enviando notificación a Telegram"
+    Logging("[INFO]",msg)

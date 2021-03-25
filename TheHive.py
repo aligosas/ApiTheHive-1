@@ -40,7 +40,8 @@ if response.status_code == 200:
             for artifact in artifacts:
                 artifact_id = CreateCaseObservable(artifact, case_id, case_title)
                 analyzers = SearchAnalyzers(artifact['dataType'])
-                    
+
+                analysis_score = 0   
                 for analyzer in analyzers:
                     analyzer_id = analyzer.analyzerDefinitionId
                     response = apiH.run_analyzer(cortex_id, artifact_id, analyzer_id)
@@ -58,6 +59,7 @@ if response.status_code == 200:
 
                             score = report['summary']['taxonomies'][0]['value']
                             report_response = AnalyzeReport(score, analyzer_id)
+                            analysis_score += int(report_response)
                         
                         except:                 
                              
@@ -67,7 +69,9 @@ if response.status_code == 200:
                     else:
                         msg = "Ocurrió un error al intetar correr el análisis " + analyzer_id  + " del observable " + artifact['data'] + " del caso " + case_id
                         Logging("[ERROR]",msg)
-
+                
+                if analysis_score >= 5:
+                    SendNotification(analysis_score, artifact['dataType'], artifact['data'])
 
     except CaseException as e:
         msg = "Ocurrió fallo al intentar crear caso para la alerta con id: " + alert['id']
