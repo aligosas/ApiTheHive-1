@@ -1,25 +1,29 @@
-
+_a
 ![67854500-2639-11ea-899e-a6db18761db5](https://user-images.githubusercontent.com/79227109/112549684-2d4eaa00-8d8c-11eb-9c6a-7af7bcc117f7.jpg)
 
-# Metodos TheHive4py
+# Metodos Cortex4py
 
-### 1. Find Alerts: 
+### 1. Get analyzers by type: 
 
-Este método es utilizado para traer las alertas que se están enviando a TheHive, esto con el fin de trabajar con base a estas, la estructura del método es la siguiente: `find_alerts(query=query, sort=['-createdAt'], range='all')`
+Este método es utilizado para saber cuáles de los analizadores que se encuentran configurados en Cortex sirven para analizar el tipo de observable, para esto se debe pasar como parametro al método el tipo de observable (ip, hash, domain, file, entre otros.) La sintaxis es la siguiente: `analyzers.get_by_type(data_type)`
 
-| Parámetro | Descripción |
-| ------------- | ------------- |
-| query  | Consulta utilizada para traer alertas en especifico, es decir que cumplan con ciertas condiciones  |
-| sort  | Lista de campos para ordenar el resultado. Prefije el nombre del campo con `-` para orden descendente y `+` para orden ascendente  | 
-| range | Un rango que describe el número de filas que se devolverán.  |
+```
+analyzers = apiC.analyzers.get_by_type(data_type)
+```
 
 #### Ejemplo:
 
 ```
-query = Gte('date', fecha)
-response = apiH.find_alerts(query=query, sort=['-createdAt'], range='all')
+analyzers = apiC.analyzers.get_by_type('domain')
 ```
 
-Dónde **fecha**, en formato timestamp, es el dato utilizado como criterio para la toma de las alertas, la función <Gte> se encarga  de tomar las alertas en las que la fecha sea mayor a **fecha**. Se toman todas las alertas que cumplan con la consulta indicada, en orden descendente.
+### 2. Get jobs by id: 
 
-En este link se encuentra una explicación de las demás consultas que pueden ser utilizadas: [Consultas de TheHive4py](https://thehive-project.github.io/TheHive4py/reference/query/)
+Luego de realizar el análisis de los observables es necesario obtener el reporte para poder tomar acciones. La sintaxis es la siguiente: `jobs.get_by_id(job_id)`
+
+```
+job = apiC.jobs.get_by_id(job_id)
+```
+
+**Nota:** El job_id de un analisis se puede obtener al correr el método **run_analyzer**, el JSON que este retorna contiene un campo llamado **cortexJobId**.
+
