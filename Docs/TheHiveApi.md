@@ -128,12 +128,12 @@ caseObservable = CaseObservable(dataType=<Tipo de dato>,
 En el siguiente ejemplo se observa la forma para relacionar un observable con un caso creado anteriormente, a la función de la api es necesario enviarle como parametros el objeto caseObservable creado y el id del caso al cuál se le asignará el observable.
 
 ```
-caseObservable = CaseObservable(dataType=artifact['dataType'],
-                                data=artifact['data'],
-                                tlp=artifact['tlp'],
-                                ioc=artifact['ioc'],
-                                tags=artifact['tags'],
-                                message=artifact['message']
+caseObservable = CaseObservable(dataType='ip',
+                                data='8.8.8.8',
+                                tlp=3,
+                                ioc=False,
+                                tags='Dominio malicioso',
+                                message='Mensaje de prueba'
                                 )
                                 
 response = apiH.create_case_observable(case_id, caseObservable)
