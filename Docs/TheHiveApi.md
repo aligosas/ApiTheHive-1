@@ -120,7 +120,6 @@ caseObservable = CaseObservable(dataType=<Tipo de dato>,
                                 )
 ```
 
-
 #### Ejemplo:
 
 En el siguiente ejemplo se observa la forma para relacionar un observable con un caso creado anteriormente, a la función de la api es necesario enviarle como parametros el objeto caseObservable creado y el id del caso al cuál se le asignará el observable.
@@ -136,3 +135,13 @@ caseObservable = CaseObservable(dataType='ip',
                                 
 response = apiH.create_case_observable(case_id, caseObservable)
 ```
+
+### 4. Run analyzer:
+
+Metodo utilizado para correr análisis sobre los observables, la utilización es sencilla, basta con pasarle los siguientes parametros:
+
+| Parámetro | Descripción |
+| ------------- | ------------- |
+| Case id  | ID del caso creado anteriormente, a este caso se asociarán los observables contenidos en las alertas  |
+| Case observable | Para asociar los observables con un caso es necesario definir un objeto caseObservable.  | 
+| Case observable | Para asociar los observables con un caso es necesario definir un objeto caseObservable.  | 
