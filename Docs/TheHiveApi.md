@@ -138,7 +138,7 @@ response = apiH.create_case_observable(case_id, caseObservable)
 
 ### 4. Run analyzer:
 
-Metodo utilizado para correr análisis sobre los observables, la utilización es sencilla, basta con pasarle los siguientes parametros:
+Metodo utilizado para correr análisis sobre los observables, la utilización es sencilla, la sintaxis es las siguiente `run_analyzer(cortex_id, artifact_id, analyzer_id)`, los parametros necesarios son los siguientes:
 
 | Parámetro | Descripción |
 | ------------- | ------------- |
