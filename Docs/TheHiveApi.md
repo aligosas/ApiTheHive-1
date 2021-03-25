@@ -22,3 +22,67 @@ response = apiH.find_alerts(query=query, sort=['-createdAt'], range='all')
 Dónde **fecha**, en formato timestamp, es el dato utilizado como criterio para la toma de las alertas, la función <Gte> se encarga  de tomar las alertas en las que la fecha sea mayor a **fecha**. Se toman todas las alertas que cumplan con la consulta indicada, en orden descendente.
 
 En este link se encuentra una explicación de las demás consultas que pueden ser utilizadas: [Consultas de TheHive4py](https://thehive-project.github.io/TheHive4py/reference/query/)
+
+### 2. Create Case: 
+
+Este método es utilizado para asociar las alertas recibidas, esto con el fin de poder correr análisis sobre los observables contenidos dentro de estas, la sintaxis de este metodo es el siguiente: `create_case(case)`.Al metodo se le debe enviar un objeto tipo Case (La construcción del caso), el cuál requiere los siguientes parametros:
+
+#### Tareas:
+
+Para crear un caso, primero es necesario definir las tareas que este contiene, se entiende como tarea la labor que debe realizar el analista con base a la alerta recibida.
+
+```
+tasks = [ 
+        CaseTask(title=<titulo de la tarea>, status=<Estado de la tarea: (Waiting, Done)>, flag=True)
+        ]
+```
+
+Un buen ejemplo para la creación de esta puede ser:
+
+```
+tasks = [ 
+        CaseTask(title='Revisión', status='Waiting', flag=True)
+        ]
+```
+
+#### Campos personalizados:
+
+En este apartado se crean otros campos personalizados, que no son tan relevantes, en estos campos se configura la relevancia del caso y la fecha en la que este fue creado, perfectamente se puede dejar la variable configurada de la siguiente manera:
+
+```
+customFields = CustomFieldHelper()\
+              .add_boolean('booleanField', True)\
+              .add_string('businessImpact', 'HIGH')\
+              .add_date('occurDate', int(time.time())*1000)\
+              .add_number('cvss', 9)\
+              .build()
+```
+
+#### Objeto Case:
+
+```
+    case = Case(title=title_case,
+                tlp=3,
+                flag=True,
+                tags=['TheHive4Py', artifacts],
+                description='N/A',
+                tasks=tasks,
+                customFields=customFields)
+```
+
+| Parámetro | Descripción |
+| ------------- | ------------- |
+| query  | Consulta utilizada para traer alertas en especifico, es decir que cumplan con ciertas condiciones  |
+| sort  | Lista de campos para ordenar el resultado. Prefije el nombre del campo con `-` para orden descendente y `+` para orden ascendente  | 
+| range | Un rango que describe el número de filas que se devolverán.  |
+
+#### Ejemplo:
+
+```
+query = Gte('date', fecha)
+response = apiH.find_alerts(query=query, sort=['-createdAt'], range='all')
+```
+
+Dónde **fecha**, en formato timestamp, es el dato utilizado como criterio para la toma de las alertas, la función <Gte> se encarga  de tomar las alertas en las que la fecha sea mayor a **fecha**. Se toman todas las alertas que cumplan con la consulta indicada, en orden descendente.
+
+En este link se encuentra una explicación de las demás consultas que pueden ser utilizadas: [Consultas de TheHive4py](https://thehive-project.github.io/TheHive4py/reference/query/)
