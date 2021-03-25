@@ -142,6 +142,6 @@ Metodo utilizado para correr análisis sobre los observables, la utilización es
 
 | Parámetro | Descripción |
 | ------------- | ------------- |
-| Case id  | ID del caso creado anteriormente, a este caso se asociarán los observables contenidos en las alertas  |
-| Case observable | Para asociar los observables con un caso es necesario definir un objeto caseObservable.  | 
-| Case observable | Para asociar los observables con un caso es necesario definir un objeto caseObservable.  | 
+| Cortex ID  | Identificador del servidor Cortex  |
+| Artifact ID | Identificador del artefacto encontrado con una búsqueda de artefactos  | 
+| Analyzer ID | Nombre del analizador utilizado por el trabajo  | 
