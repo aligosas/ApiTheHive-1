@@ -144,4 +144,14 @@ Metodo utilizado para correr análisis sobre los observables, la utilización es
 | ------------- | ------------- |
 | Cortex ID  | Identificador del servidor Cortex  |
 | Artifact ID | Identificador del artefacto encontrado con una búsqueda de artefactos  | 
-| Analyzer ID | Nombre del analizador utilizado por el trabajo  | 
+| Analyzer ID | Nombre del analizador utilizado por el trabajo  |
+
+#### Ejemplo:
+
+Ejemplo de ejecución de un analisis de virustotal con el Cortex ID usado en el laboratorio que es `CORTEX-ALIGO`
+
+```
+run_analyzer("CORTEX-ALIGO", <artifact_id>, "VirusTotal_GetReport_3_0")
+```
+
+Nota: El atributo **artifact_id** se obtiene luego de crear un caso y asociarlo con algún observable, en la documentación del [Script](https://github.com/AligoXOC/ApiTheHive/blob/main/Docs/Script.md) se encuentra la explicación de como obtenerlo. Este campo es necesario porque así el script sabe sobre cuál observable correrla los análisis.
