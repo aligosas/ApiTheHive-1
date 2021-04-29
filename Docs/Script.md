@@ -90,3 +90,4 @@ Es el Core principal del script, se encarga de darle el flujo necesario a todas 
 
 Los logs se ven de la siguiente manera durante la ejecución del script:
 
+![Captura](https://user-images.githubusercontent.com/79227109/116623460-e2d0c800-a90b-11eb-9b22-d746e2e3d9b8.PNG)
