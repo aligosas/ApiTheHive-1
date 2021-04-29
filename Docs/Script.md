@@ -246,3 +246,40 @@ def SendNotification(analysis_score, dataType, observable):
     msg = "Enviando notificación a Telegram"
     Logging("[INFO]",msg)
 ```
+
+## TheHive
+
+Es el Core principal del script, se encarga de darle el flujo necesario a todas las funciones que se encuentran creadas.
+
+####Diagrama de flujo:
+
+![0_0](https://user-images.githubusercontent.com/79227109/116622173-e2373200-a909-11eb-93ac-6622abcc8039.png)
+
+`TheHive.py`:
+
+```
+import datetime
+import time
+import pytz
+
+# Config File
+import ApiConfig as cfg
+
+# TheHive4Py Imports
+from thehive4py.api import TheHiveApi
+from thehive4py.models import *
+from thehive4py.query import *
+
+#Cortex Imports
+from cortex4py.api import Api
+from cortex4py.query import *
+
+#APIs Connection
+hiveServer = cfg.ApiConfig["TheHiveHost"] + ":" + cfg.ApiConfig["TheHivePort"]
+hiveKey = cfg.ApiConfig["TheHiveApiKey"]
+apiH = TheHiveApi(hiveServer, hiveKey)
+
+cortexServer = cfg.ApiConfig["CortexHost"] + ":" + cfg.ApiConfig["CortexPort"]
+cortexKey = cfg.ApiConfig["CortexApiKey"]
+apiC = Api(cortexServer, cortexKey)
+```
