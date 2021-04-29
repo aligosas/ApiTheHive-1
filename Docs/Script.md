@@ -86,3 +86,7 @@ Es el Core principal del script, se encarga de darle el flujo necesario a todas 
 
 ![0_0](https://user-images.githubusercontent.com/79227109/116622173-e2373200-a909-11eb-93ac-6622abcc8039.png)
 
+#### Loggin:
+
+Los logs se ven de la siguiente manera durante la ejecución del script:
+
