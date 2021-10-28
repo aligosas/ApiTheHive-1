@@ -19,7 +19,7 @@ def Filter(alerts):
     return filtered_alerts
 
 def CreateCase(alert):
- 
+
     tasks = [
         CaseTask(title='Revisión', status='Waiting', flag=True)
     ]
@@ -33,7 +33,7 @@ def CreateCase(alert):
 
     artifacts = ""
     for artifact in alert['artifacts']:
-        artifacts += "*" + artifact['data'] + "* " 
+        artifacts += "*" + artifact['data'] + "* "
 
     title_case = alert['id']
     case = Case(title=title_case,
@@ -120,7 +120,7 @@ def GetReport(job_id):
         return report
 
     else:
-     
+
         msg = "El análisis que se intentaba correr falló, se recomienda validar que la configuración de Cortex se encuentre bien"
         Logging("[ERROR]",msg)
         return None
@@ -128,32 +128,31 @@ def GetReport(job_id):
 def AnalyzeReport(score, analyzer):
 
     if analyzer == 'VirusTotal_GetReport_3_0':
-        
+
         score = score.split()[0]
         return score
 
-    elif analyzer == 'OTXQuery_2_0':
-    
+    elif analyzer == 'AbuseIPDB_1_0':
+        #score = score.split()
+        #score = int(score[0]) + int(score[3]) + int(score[6])
         return score
 
-    elif analyzer == 'DShield_lookup_1_0':
+    elif analyzer == 'OTXQuery_2_0':
+        return score
 
-        score = score.split()
-        score = int(score[0]) + int(score[3]) + int(score[6]) 
-        return score        
 
     else:
- 
+
         msg = "El analizador " + analyzer + " todavía no cuenta con un método para el análisis de sus reportes"
         Logging("[ERROR]",msg)
 
 
-def SendNotification(analysis_score, dataType, observable):
+def SendNotification(analysis_score, dataType, observable, alertType):
 
-    BOT_TOKEN="1628114474:AAHO9LvKHts2wTKAn2LR0LQPtVfqaW0iYqs"
+    BOT_TOKEN="1906316249:AAErigMhZXNI6__qmcfzWPse4VGoxmFDBkc"
     URL="https://api.telegram.org/bot" + BOT_TOKEN + "/sendMessage"
-    GROUP_ID="-552607247"
-    MENSAJE="[Linea Directa][XOAR]: Se han detectado comportamientos sospechosos provenientes de la " + dataType + " " +  observable + ", la " + dataType + " se encuentra reportada por " + str(analysis_score) + " motores."
+    GROUP_ID="-1001438250743"
+    MENSAJE="[Linea Directa][XOAR]: Se han detectado comportamientos sospechosos provenientes de la " + dataType + " " +  observable + ", la " + dataType + " se encuentra reportada por " + str(analysis_score) + " motores. El tipo de alerta que genero el reporte fue: " + str(alertType)
     TEXT = "curl -s -X POST "  + URL + " -d chat_id=" + GROUP_ID + " -d text=\""
     TEXT2 = "\" > /dev/null"
 
