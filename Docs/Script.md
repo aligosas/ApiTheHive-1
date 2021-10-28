@@ -1,6 +1,6 @@
 # Script XOAR:
 
-El script de inteligencia de amenazas se compone de cuatro archivos archivos *.py*, la mayoría de estos son archivos de configuración. El archivo principal, es el archivo **TheHive.py**. A continuación se realiza una explicación de cada uno de estos archivos.
+El script de inteligencia de amenazas se compone de cuatro archivos archivos *.py*, la mayoría de estos son archivos de configuración y un archivo txt. El archivo principal, es el archivo **TheHive.py**. A continuación se realiza una explicación de cada uno de estos archivos.
 
 ## ApiConfig
 
@@ -78,16 +78,22 @@ En este archivo se encuentran creadas todas las funciones propias que son usadas
 | AnalyzeReport  | Analiza los reportes obtenidos y determina si el observable representa un riesgo. |
 | SendNotification  | Envia las notificaciones a Telegram. |
 
+## Fecha.txt
+Es el archivo de texto en el cual se almacena la fecha de la ultima alerta que fue procesada. Esto con el objetivo de que en la próxima ejecución del script se procesen únicamente las alertas cuya fecha de creación es igual o mayor a la almacenada. Cabe resaltar que dicho archivo se actualiza cada vez que se ejecuta el script. 
+
 ## TheHive
 
 Es el Core principal del script, se encarga de darle el flujo necesario a todas las funciones que se encuentran creadas.
 
 #### Diagrama de flujo:
+![diagrama-Page-2 drawio](https://user-images.githubusercontent.com/57953380/139280555-01778a1a-2421-47b2-bbfe-8db1521f64f1.png)
 
-![0_0](https://user-images.githubusercontent.com/79227109/116622173-e2373200-a909-11eb-93ac-6622abcc8039.png)
-
-#### Loggin:
-
+#### Logging:
 Los logs se ven de la siguiente manera durante la ejecución del script:
-
 ![Captura](https://user-images.githubusercontent.com/79227109/116623460-e2d0c800-a90b-11eb-9b22-d746e2e3d9b8.PNG)
+
+### Crontab task
+Para la ejecución automática del script se definió una tarea de crontab que se ejecute cada 30 minutos, con el ánimo de procesar las nuevas alertas que llegan a TheHive en este rango de tiempo. 
+Ejecutando el comando ````crontab -e ```` es posible editar el archivo donde se programan las tareas. 
+![image](https://user-images.githubusercontent.com/57953380/139323623-9ae0e1b4-dc6c-46ef-b265-ac97ba70393a.png)
+Nota: para editar archivos en vim se presiona la tecla "Insert" y para salir "Esc :wq!"
