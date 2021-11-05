@@ -1,0 +1,38 @@
+# Cortex
+
+Cortex es una herramienta que permite analizar observables que se han recopilado, a escala, consultando una sola herramienta en lugar de varias, los objetos observables, como direcciones IP y de correo electrónico, URL, nombres de dominio, archivos o hashes, se pueden analizar uno por uno o en modo masivo mediante una interfaz web.
+
+## Configurar analizadores 
+El procedimiento para habilitar analizadores en Cortex es realmente corto e intuitivo. Para el caso particular del XOAR, se busca analizar direcciones IP, es decir, que nuestro observable son las direcciones IP. 
+Así entonces, se listan algunos los posibles analizadores  que nos provee 
+Cortex para procesar este tipo de observables:
+
+AbuseIPDB, DNSSinkhole, DShield, FireHOLBlocklists, Hippocampe, MalwareClustering, MISP Warninglists, OTXQuery, StopForumSpam, Talos Reputation, GreyNoise, Malwares, EmergingThreats, IPVoid, Nessus, VirusTotal, ...
+
+Visitando este [enlace](https://github.com/TheHive-Project/CortexDocs/blob/master/analyzer_requirements.md),  podemos familiarizarnos un poco con todos los analizadores que posee Cortex para los diferentes observables. 
+
+Para efectos prácticos, se configuraron 3 de los analizadores: AbuseIPDB, OTXQuery, VirusTotal. 
+Con el objetivo de habilitar un analizador, una vez logueado en la UI de Cortex, nos dirigimos a la pestaña **Organizations** en la esquina superior derecha y, posteriormente, clic en **Analyzers** así:  
+![image](https://user-images.githubusercontent.com/57953380/140412765-5d96bcb5-6d31-4a20-9fa2-1dfbc79dc53c.png)
+Una vez allí, podemos comenzar a habilitar (o deshabilitar) analizadores según sea el caso. 
+
+A continuación  se describe un paso a paso de la habilitación de los 3 analizadores definidos para el proyecto:
+
+### AbuseIPDB: 
+Para activar dicho analizador, luego de dar clic en **Enable** aparecerá una pantalla similar a la que se muestra. Allí, se hace necesario inscribir una api key, la cual es provista al crear una cuenta en el sitio web del analizador (Ver [enlace](https://www.abuseipdb.com/register?plan=free) para crear cuenta). 
+La Api Key que se muestra en la imagen corresponde a una cuenta **free** de uno de los analistas de Aligo, con la cual se pueden realizar hasta 1.000 peticiones por día. 
+ ![image](https://user-images.githubusercontent.com/57953380/140517487-c0728511-5452-4d35-b833-acf257ea07dd.png)
+Una vez tenemos la api key, es posible dejar las demás configuraciones por defecto y damos clic en **Save** para guardar los cambios realizados.
+
+### OTXQuery: 
+Para este analizador, al igual que el anterior se hace necesario configurar únicamente el Api Key y guardar los cambios. Una vez hecho esto, el analizador queda debidamente habilitado.
+![image](https://user-images.githubusercontent.com/57953380/140522439-ebe5fe01-ae36-4722-af63-d259a73c85d8.png)
+
+### VirusTotal_GetReport3_0:
+Para la activación de VirusTotal también fue necesaria la creación de una ApiKey, la cual nos provee la página web una vez se crea la cuenta (ver [enlace](https://www.virustotal.com/gui/join-us) para registro). Con esta cuenta se podrán realizar entonces 500 consultas por día y hasta 4 por minuto, razón por la cual se hace necesario configurar un **polling_interval** de 15 segundos, lo que significa que el intervalo entre una consulta y otra será mínimo de 15 segundos. 
+![image](https://user-images.githubusercontent.com/57953380/140523193-fb01f776-b68b-4e13-a1f8-bf17d19660b9.png)
+Finalmente, de manera opcional, podría establecerse en el parámetro de **Rate limiting** que el máximo de peticiones que se permitirá realizar es de 500 por día. 
+![image](https://user-images.githubusercontent.com/57953380/140523294-0d918e1f-2c34-4922-95fd-ed88cc1dfb51.png)
+
+**NOTA**: Todas las Api Keys fueron creadas con cuentas personales de analistas de la compañía, por lo cual se sugiere la suscripción desde una misma cuenta del equipo de operaciones, desde la cual se pueda centralizar toda la gestión de dichas claves ante cualquier eventualidad que pueda suceder.  
+Por otra parte, a medida que el proyecto XOAR crezca, se hará necesaria la suscripción a cuentas premium en cada uno de estos analizadores, buscando aumentar el número de consultas a la Api que podrían realizarse diariamente.
