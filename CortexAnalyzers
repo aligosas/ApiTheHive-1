@@ -11,6 +11,44 @@ AbuseIPDB, DNSSinkhole, DShield, FireHOLBlocklists, Hippocampe, MalwareClusterin
 
 Visitando este [enlace](https://github.com/TheHive-Project/CortexDocs/blob/master/analyzer_requirements.md),  podemos familiarizarnos un poco con todos los analizadores que posee Cortex para los diferentes observables. 
 
+### Clonación de docker analyzers images 
+Es importante mencionar que, todos estos analizadores son contenedores alojados en docker hub, razón por la cual, fue necesario clonar las imágenes en el registry de aligo, para evitar que docker nos limitara la cantidad de llamados a cada uno de ellos. Así entonces, en caso de ser necesario activar otro de los analizadores, se deben seguir las siguientes instrucciones:
+Primera parte:
+
+ 1. Ingresar remotamente a **thexoc03** 
+ 2. Hacer pull a la imagen del analizador en cuestion 
+  `docker pull cortexneurons/[nombre_del_analizador]` 
+![image](https://user-images.githubusercontent.com/57953380/141142521-a7035f8b-c698-4225-a2c6-b77ae0458914.png)
+
+4. Con el comando  `docker images -a| grep cortex` conseguimos el id de la imagen a la que acabamos de hacer pull 
+![image](https://user-images.githubusercontent.com/57953380/141145361-64f52035-cf3d-45e0-b311-08cc50cb2ebd.png)
+6. Con el ID del paso anterior, cambiamos el tag de dicha imagen para la ruta de nuestro registry que generalmente será: *"ctlpln01.aligo.corp:8443/cortexneurons/[nombre_del_analizador]"*  con el comando
+ `docker tag [id_del analizador] [nueva ruta del analizador]`
+ ![image](https://user-images.githubusercontent.com/57953380/141145760-948d2563-6ca2-49c8-816f-cf87259ab902.png)
+
+7. Hacemos push a los cambios con el comando 
+`docker push ctlpln01.aligo.corp:8443/cortexneurons/[nombre_del_analizador]`
+![image](https://user-images.githubusercontent.com/57953380/141145943-ea604ca4-6881-48d0-86d9-ef73f8a06932.png)
+
+Segunda parte:
+ 1. Ingresar a rancher 
+ 2. Ingresar al cluster de LD donde se encuentra instalado Cortex 
+ 3. En el apartado **Resources**, clic en **Config**
+ ![image](https://user-images.githubusercontent.com/57953380/141132710-166f758e-58c4-4b6c-94a9-03582a48b54c.png)
+
+ 5. Clic en **"cortex-config"** y en los 3 puntos (esquina superior derecha) clic en **Edit**
+![image](https://user-images.githubusercontent.com/57953380/141133342-f7959887-4e8a-419a-80a8-e5e964d335d8.png)
+8. Una vez allí, en el archivo **analyzers.json** cambiamos la ruta de la cual se va a extraer la docker image (ver ejemplo para el analizador AbuseIPDB)
+![image](https://user-images.githubusercontent.com/57953380/141136166-29fc645b-709d-4fdd-bbad-767739485924.png)
+9. Revisar muy bien que la ruta coincida exactamente con la que se configuró en los pasos anteriores. 
+10. Clic en **guardar**
+11. Para que los cambios se actualicen, será necesario:
+	* Reiniciar el workload del xoar desde rancher 
+	* Deshabilitar (en caso de tenerlo habilitado), para posteriormente habilitar  el analizador en cuestión desde la UI de Cortex. 
+![image](https://user-images.githubusercontent.com/57953380/141135799-fb453185-1367-4285-9d34-b6050af4c88a.png)
+
+
+### Habilitar analizadores
 Para efectos prácticos, se configuraron 3 de los analizadores: AbuseIPDB, OTXQuery, VirusTotal. 
 Con el objetivo de habilitar un analizador, una vez logueado en la UI de Cortex, nos dirigimos a la pestaña **Organizations** en la esquina superior derecha y, posteriormente, clic en **Analyzers** así:  
 ![image](https://user-images.githubusercontent.com/57953380/140412765-5d96bcb5-6d31-4a20-9fa2-1dfbc79dc53c.png)
